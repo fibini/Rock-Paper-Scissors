@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock-Paper-Scissors</title>
+        <meta charset="UTF-8">
+    </head>
+    <script>
+        // create 2 variables for player selection and computer selection
+        const playerSelection = window.prompt("Enter Rock, Paper, Scissors")
+        const computerSelection = computerPlay()
+        // create a function called computerplay and have it randomly select "rock, paper or scissors"
+        function computerPlay() {
+            // first i created a variable equal to the equation that would pick a random number between 1 and 10 not inclusive of 10
+            const random = Math.floor(Math.random() * 10)
+            // then used an if statement to have between 1 and 3 equal "rock" between 4 and 6 equal "paper" and between 7 and 9 equal "scissors"
+            if (random <= 3) {
+                return "Rock"
+            }
+            else if (random <= 6) {
+                return "Paper"
+            }
+            else return "Scissors"
+        }
+        // create a function called playround with 2 parameters for player selection and computer selection
+        function playRound(playerSelection, computerSelection){
+            // i used an if statement here to compare the lower case versions of the player input and computer input if it was the same it would return a string.
+            if (playerSelection.toLowerCase() === computerSelection.toLowerCase()){
+                return "Tie"
+            }
+            // did the samething here as well this time made a comparison between lowercase rock and paper, then return a string saying one was the loser.
+            else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper"){
+                return "You lose!"
+            }
+            // did the same thing as i did above 
+            else if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors"){
+                return "You lose!"
+            }
+            // repeated the process again
+            else if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock"){
+                return "You lose!"
+            }
+            // this last line would automactically announce player as the winner if none of the above is true.
+            else return "You Win"
+        }
+        console.log(playRound(playerSelection, computerSelection))
+        console.log(computerSelection)
+
+        function game(){
+           
+        }
+        //console.log(game())
+    </script>
+</html>
